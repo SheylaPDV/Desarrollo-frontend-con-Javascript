@@ -11,6 +11,8 @@
         <!-- <h1>WALLAPOP</h1> -->
         <main></main>
 
+        <!-- CREAR ETIQUETAS HTML DESDE JS -->
+
         <script>
             const p1Element = document.createElement("p"); //creacion de etiqueta nodo
             p1Element.textContent = "Parrafo nuevo"; //le añado un texto
@@ -25,18 +27,20 @@
             
             mainElement.innerHTML = "<p>Soy un parrafo destructor</p>"; //tsustituye lo que haya en main por lo que meta yo aqui
         </script>
-        <!-- <input 
+
+        <!-- INPUT -->
+
+        <input 
             type="text"
             value="valor por defecto"
-            placeholder="escribe aqui"> -->
-        <!-- <script>
-            console.log('hola desde tag script')
-        </script> -->
+            placeholder="escribe aqui"> 
+        <!-- IMPORTAR FICHEROS -->
 
         <!-- se carga un js plano (todo lo que se escriba dentro, son accesibles de cualquier fichero) -->
-        <!-- <script src="index.js"></script> -->
+        <script src="index.js"></script>
         <!-- se carga un modulo de js (todo lo que se escriba de js dentro del modulo, no se conoce fuera de este contexto) -->
-        <!-- <script type="module" src="index-module.js"></script> -->
+        <script type="module" src="index-module.js"></script>
+            
 
     </body>
 </html>
