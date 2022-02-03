@@ -28,13 +28,31 @@ document.querySelector('a').addEventListener('click', (event) => {
     event.preventDefault();
 });
 
-// bubling propagacion de eventos hacia arriba
+// bubling propagacion de eventos hacia los padres
 const divListElement = document.querySelector("div");
 
 divListElement.forEach((div) => {
     div.addEventListener("click", (event) => {
         console.log(event.target);
-        // aqui diriamos que no se propagara el evento
+        // parar la propagacion
         event.stopPropagation();
     })
 })
+//  mas ejemplos
+
+const buttonListElement = document.querySelectorAll('button');
+
+//cuando haces una funcion manejadora de eventos, solo va a recibir el evento.
+for (const button of buttonListElement) { 
+    button.addEventListener('click', (eventito) => {
+         //innerHTML accede al contenido dentro de la etiqueta, recibe modo lectura(textContent tambien vale)
+        drawTime(eventito.target.innerHTML); 
+    });
+}
+
+// innerHTML aqui accede en modo escritura
+function drawTime(message) {
+    document.getElementById('demo').innerHTML = message; 
+}
+
+drawTime('texto inciial');
