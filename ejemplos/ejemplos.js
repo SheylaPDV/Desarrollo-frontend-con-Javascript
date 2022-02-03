@@ -56,3 +56,33 @@ function drawTime(message) {
 }
 
 drawTime('texto inciial');
+
+
+// EJEMPLO PROMESA
+
+function calculateRandomNumber() {
+    return new Promise(function(resolve, reject) {
+        setTimeout(() => {
+            const randomNumber = Math.floor(Math.random() * 10);
+            if(randomNumber % 2 === 0) {
+              resolve(randomNumber);  
+            } else {
+              reject(randomNumber);
+            }
+            
+        }, 1500);
+    });
+}
+
+console.log('antes de calcular');
+
+calculateRandomNumber()
+.then((randomNumber) => {
+    console.log(randomNumber);
+})
+.catch(() => {
+    console.log('El numero es impar')
+})
+.finally(() => {
+    console.log('despues de calcular');
+})

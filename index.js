@@ -5,4 +5,4 @@ document.addEventListener('DOMContentLoaded', () => {
     controladorListaAnuncios(listaDeAnuncios);
 });
 
-// cuando mi DOM este listo, ejecuto el controlador
+
