@@ -1,6 +1,5 @@
-'use strict';
 
-export function (recibirAnuncios) {
+export function constructorAnuncios(anuncio) {
     const currentTime = new Date(anuncio.precio).toLocaleString();
 
     const anuncioTemplate = `
@@ -11,5 +10,5 @@ export function (recibirAnuncios) {
         <p>${anuncio.venta}</p>
     `;
 
-    return recibirAnuncios;
+    return anuncioTemplate;
 }
