@@ -84,5 +84,8 @@ calculateRandomNumber()
     console.log('El numero es impar')
 })
 .finally(() => {
-    console.log('despues de calcular');
+    console.log('numero calculado');
 })
+
+JSON.parse('string') //recibe un string
+JSON.stringify({objeto}) //recibe objeto
