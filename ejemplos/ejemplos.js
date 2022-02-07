@@ -89,3 +89,29 @@ calculateRandomNumber()
 
 JSON.parse('string') //recibe un string
 JSON.stringify({objeto}) //recibe objeto
+
+
+//Promesas, se pueden escribir de 2 maneras:(hacen exactamente lo mismo)
+
+function helloWorldPromise() {
+    return new Promise(function(resolve, reject) {
+        resolve('hello world')
+    })
+}
+helloWorldPromise().then(message => {console.log(message) })
+
+//////////////////////////////////////////////////////////////////////
+
+async function helloWorldAsync() {
+    return 'Hello world'
+}
+
+//funcion asyncrona que se ejecuta sola
+
+(async () => {
+    const result = await helloWorldAsync();
+})();
+
+//New promise ---> async
+//.then ---> await
+//cualquier metodo que use await, tiene que ser async
