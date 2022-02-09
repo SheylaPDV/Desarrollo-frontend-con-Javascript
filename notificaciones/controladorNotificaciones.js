@@ -1,9 +1,18 @@
+import { pubSub } from "../pubSub.js";
 import { vistaNotificacion } from "./vistaNotificacion.js";
 
 
 export class ControladorNotificaciones {
     constructor(elementoNotificacion) {
         this.elementoNotificacion = elementoNotificacion;
+
+        this.subscribeEventos();
+    }
+
+    subscribeEventos() {
+        pubSub.subscribe('SHOW_ERROR_NOTIFICATION', () => {
+            this.show()
+        })
     }
 
     show(message) {

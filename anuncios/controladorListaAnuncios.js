@@ -1,8 +1,6 @@
-import { ControladorNotificaciones } from "./controladorNotificaciones.js"
+import { pubSub } from "../pubSub.js";
 import modeloServicioWallapop from "./modeloServicioWallapop.js";
 import { constructorAnuncios, constructorRuleta } from "./vistaAnuncios.js";
-
-
 
 
 export class ControladorListaAnuncios {
@@ -30,8 +28,10 @@ export class ControladorListaAnuncios {
                 // incluir anuncio en el DOM
                 this.listaDeAnuncios.appendChild(elementoDeArticulo);
             }
+
         } catch (error) {
-            this.controladorNotificaciones.show("error obteniendo anuncios");
+            // this.controladorNotificaciones.show("error obteniendo anuncios");
+            pubSub.publish('SHOW_ERROR_NOTIFICATION')
             // alert('error al obtener los anuncios')
 
         } finally {
