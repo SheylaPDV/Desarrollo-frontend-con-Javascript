@@ -10,8 +10,8 @@ export class ControladorNotificaciones {
     }
 
     subscribeEventos() {
-        pubSub.subscribe('SHOW_ERROR_NOTIFICATION', () => {
-            this.show()
+        pubSub.subscribe(pubSub.TOPICS.SHOW_ERROR_NOTIFICATION, (message) => { //subscriber, escucha el mensaje de controlador lista anuncios a traves de pubSub
+            this.show(message)
         })
     }
 

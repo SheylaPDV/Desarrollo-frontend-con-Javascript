@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const controladorNotificaciones = new ControladorNotificaciones(elementoNotificacion);
     
 
-    const controladorListaAnuncios =  new ControladorListaAnuncios(listaDeAnuncios, controladorNotificaciones);
+    const controladorListaAnuncios =  new ControladorListaAnuncios(listaDeAnuncios);
     await controladorListaAnuncios.pintarAnuncios();
 });
 
