@@ -1,0 +1,19 @@
+.notificacion {
+    width: 300px;
+    background-color: green;
+    color: white;
+    border-radius: 0.5rem;
+    display: flex;
+    position: relative;
+}
+
+.notificacion p {
+    width: 80%;
+    padding: 0.5rem;
+}
+
+.notificacion button {
+    top: 5px;
+    right: 5px;
+    position: absolute;
+}

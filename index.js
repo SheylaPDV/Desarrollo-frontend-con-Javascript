@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     // controladorListaAnuncios(listaDeAnuncios);
     const elementoNotificacion = document.querySelector('.notificacion');
     const controladorNotificaciones = new ControladorNotificaciones(elementoNotificacion);
-    controladorNotificaciones.show("mensaje de ejemplo");
+    controladorNotificaciones.show("error obteniendo anuncios");
 
-    const controladorListaAnuncios =  new ControladorListaAnuncios(listaDeAnuncios);
+    const controladorListaAnuncios =  new ControladorListaAnuncios(listaDeAnuncios, controladorNotificaciones);
     await controladorListaAnuncios.pintarAnuncios();
 });
 
