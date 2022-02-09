@@ -12,7 +12,8 @@ export class ControladorNotificaciones {
     subscribeEventos() {
         pubSub.subscribe(pubSub.TOPICS.SHOW_ERROR_NOTIFICATION, (message) => { //subscriber, escucha el mensaje de controlador lista anuncios a traves de pubSub
             this.show(message)
-        })
+        });
+        // pubSub.subscribe(pubSub.TOPICS.SHOW_ERROR_NOTIFICATION).remove(); borrar evento despues de subscibirse para liberar memoria
     }
 
     show(message) {

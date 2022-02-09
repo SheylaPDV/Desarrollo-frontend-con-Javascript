@@ -1,16 +1,15 @@
 .lista-anuncios {
     display: flex;
-    border: darkblue 1px solid;
     color: black;
-    background-color: burlywood;
+    background-color: rgb(92, 192, 209);
 }
 
 .titulo-portada {
     color: rgb(58, 89, 228);
     height: 50%;
     font-size: 50px;
-   
     width: 50%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
