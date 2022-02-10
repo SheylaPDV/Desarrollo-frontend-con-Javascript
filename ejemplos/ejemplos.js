@@ -131,3 +131,7 @@ modeloServicioWallapop.getAnuncios()
 loader.classList.add("hidden");
 // loader.classList.remove("hidden"); // Eliminar
 // loader.classList.toggle("hidden");  //si tiene la clase se la quito, y si no la tiene se la pongo
+
+
+every = AND  
+some = OR
