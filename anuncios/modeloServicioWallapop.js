@@ -1,10 +1,10 @@
 
 export default {
     async getAnuncios() {
-        const url = "https://gist.githubusercontent.com/edu-aguilar/8c9a509ec582d04da0640be2b0ede8d5/raw/f75c68645821f3c33d82d9c2c048215584d1d332/tweets.json"
+        const url = "http://localhost:8000/api/productos"
 
         let response;
-        let anuncios;
+        let productos;
 
         try {
             response = await fetch(url);
@@ -17,13 +17,31 @@ export default {
         }
 
         try {
-            anuncios = await response.json();
+            productos = await response.json();
         } catch (error) {
             throw new Error('he podido transformar la respuesta a json');
         }
 
-        return anuncios;
+        const transformarProducto = this.transformarProductos(productos);
+        return transformarProducto;
+
     },
+
+    transformarProductos(productos) {
+        return productos.map((producto) => {
+            const transformarproducto = {
+                nombre: producto.nombre || producto.content,
+                descripcion: producto.descripcion,
+                precio: producto.precio,
+                venta: producto.venta,
+                // date: producto.updatedAt | producto.date,
+                id: producto.id || 0,
+                image: producto.avatar || 'https://idescargar.com/wp-content/uploads/2017/06/wallapop.png'
+            };
+            
+            return transformarproducto;
+        });
+    }
     // nuevoGetAnuncios() {
     //     const url = 'https://gist.githubusercontent.com/edu-aguilar/8c9a509ec582d04da0640be2b0ede8d5/raw/f75c68645821f3c33d82d9c2c048215584d1d332/tweets.json'
 

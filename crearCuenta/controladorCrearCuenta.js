@@ -78,8 +78,9 @@ export class ControladorCrearCuenta {
 
     async loginUsuario(username, passwordInput) {
         try {
-            const jwt = await servicioCrearCuenta.loginUsuario(username, passwordInput);
-            pubSub.publish(pubSub.TOPICS.SHOW_ERROR_NOTIFICATION, jwt);
+            await servicioCrearCuenta.loginUsuario(username, passwordInput);
+            window.location.href = '/';
+          
         } catch (error) {
             pubSub.publish(pubSub.TOPICS.SHOW_ERROR_NOTIFICATION, error);
         }

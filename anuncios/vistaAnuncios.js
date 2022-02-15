@@ -1,15 +1,17 @@
 
-export function constructorAnuncios(anuncio) {
-    const currentTime = new Date(anuncio.precio).toLocaleString();
+export function constructorAnuncios(producto) {
+    // const currentTime = new Date(producto.precio).toLocaleString();
 
-    const anuncioTemplate = `
-        <h1>${anuncio.pseudo}</h1>
-        <p>${anuncio.foto}</p>
-        <p>${anuncio.content}</p>
-        <p>${currentTime}</p>
-        <p>${anuncio.venta}</p>
-        <span>${anuncio.retweets} retweets y ${anuncio.retweets} likes</span>
+    let anuncioTemplate = `
+        <h1>${producto.nombre}</h1>
+        <p>${producto.descripcion}</p>
+        <p>${producto.precio}</p>
+        <p>${producto.venta}</p>
+        <img src=${producto.image}></img>
     `;
+
+    anuncioTemplate += `<img src=${producto.image}></img>`
+    
 
     return anuncioTemplate;
 }

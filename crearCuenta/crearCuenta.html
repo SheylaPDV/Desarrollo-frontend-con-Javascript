@@ -3,36 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="../anuncios/index.css">
     <link rel="stylesheet" href="../notificaciones/notificacion.css">
     <title>Registro</title>
 </head>
-<body>
-    <main>
+<body class="body-crear-cuenta">
+    <form class="formulario-inicio-sesion">
         <div class="notificacion"></div>
-        <section class="crear-cuenta">
-            <form id="crear-cuenta-form">
-                <div>
-                    <label for="textInput">Usuario: </label>
-                    <input type="text" name="textInput" id="textInput" placeholder="Nombre de usuario" required>
-                </div>
-               
-                <div>
-                    <label for="passwordInput">Contraseña: </label>
-                    <input type="password" name="passwordInput" id="passwordInput" placeholder="Contraseña" required>
-                </div>
-                
-                <div>
-                    <label for="passwordMatchInput">Contraseña: </label>
-                    <input type="password" name="passwordMatchInput" id="passwordMatchInput" placeholder="Repite la contraseña" required>
-                </div>
-               
+            
+        <h3>Crear cuenta</h3>
 
-                <button disabled type="submit">Crear usuario</button>
-            </form>
-        </section>
-    </main>
+        <label for="textInput">Introduzca nombre de usuario: </label>
+        <input class="input-form" type="text" name="textInput" id="textInput" placeholder="Nombre de usuario" required>
+
+        <label for="passwordInput">Introduzca contraseña: </label>
+        <input class="input-form" type="password" name="passwordInput" id="passwordInput" placeholder="Contraseña" required>
+
+        <label for="passwordMatchInput">Introduzca de nuevo contraseña: </label>
+        <input class="input-form" type="password" name="passwordMatchInput" id="passwordMatchInput" placeholder="Contraseña" required>
+
+        <a href="/index.html">
+            <button disabled type="module" class="boton-form" type="submit" onclick="index.html">
+                Crear Usuario
+            </button>
+        </a>
+    </form>
+
+
+    <!-- <main>
+        <div class="notificacion"></div>
+    
+        <form class="crear-cuenta">
+            <div>
+                <label for="textInput">Usuario: </label>
+                <input type="text" name="textInput" id="textInput" placeholder="Nombre de usuario" required>
+            </div>
+            
+            <div>
+                <label for="passwordInput">Contraseña: </label>
+                <input type="password" name="passwordInput" id="passwordInput" placeholder="Contraseña" required>
+            </div>
+            
+            <div>
+                <label for="passwordMatchInput">Contraseña: </label>
+                <input type="password" name="passwordMatchInput" id="passwordMatchInput" placeholder="Repite la contraseña" required>
+            </div>
+            
+
+            <button disabled type="submit">Crear usuario</button>
+        </form>
+    
+    </main> -->
     <script type="module" src="./crearCuenta.js"></script>
     <script type="module" src="../pubSub.js"></script>
 </body>

@@ -48,7 +48,8 @@ class ServicioCrearCuenta {
         if (!response.ok) {
             throw new Error(data.message);
         }
-        return data.accessToken;
+        const token = data.accessToken;
+        localStorage.setItem('jwt', token);
     }
 }
 
