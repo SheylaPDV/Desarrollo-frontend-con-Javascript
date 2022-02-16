@@ -32,7 +32,7 @@ export class ControladorListaAnuncios {
         } catch (error) {
             // this.controladorNotificaciones.show("error obteniendo anuncios");
 
-            pubSub.publish(pubSub.TOPICS.SHOW_ERROR_NOTIFICATION, 'error obteniendo tweets'); //informar de un error (publisher) a pubSub
+            pubSub.publish(pubSub.TOPICS.SHOW_ERROR_NOTIFICATION, 'Error obteniendo los productos'); //informar de un error (publisher) a pubSub
             // alert('error al obtener los anuncios')
 
         } finally {

@@ -9,17 +9,17 @@ export default {
         try {
             response = await fetch(url);
         } catch (error) {
-            throw new Error(' no he podido ir a por los tweets');
+            throw new Error('No he podido cargar los productos');
         }
 
         if (!response.ok) {
-            throw new Error("Tweets no encontrados");
+            throw new Error("Productos no encontrados");
         }
 
         try {
             productos = await response.json();
         } catch (error) {
-            throw new Error('he podido transformar la respuesta a json');
+            throw new Error('No he podido transformar la respuesta a json');
         }
 
         const transformarProducto = this.transformarProductos(productos);
@@ -30,11 +30,10 @@ export default {
     transformarProductos(productos) {
         return productos.map((producto) => {
             const transformarproducto = {
-                nombre: producto.nombre || producto.content,
+                nombre: producto.nombre || producto.name,
                 descripcion: producto.descripcion,
                 precio: producto.precio,
                 venta: producto.venta,
-                // date: producto.updatedAt | producto.date,
                 id: producto.id || 0,
                 image: producto.avatar || 'https://idescargar.com/wp-content/uploads/2017/06/wallapop.png'
             };

@@ -22,9 +22,7 @@
     padding: 10px;
 } */
 
-.notificacion {
-    color: blue;
-}
+
 
 .barra-login {
     display: flex;
@@ -57,6 +55,7 @@ label {
                   Helvetica,
                   sans-serif;
 }
+
 a {
     text-decoration: none;
 }
@@ -119,7 +118,7 @@ header {
     flex-direction: row;
     align-content: center;
     justify-content: space-around;
-    background-color: rgba(0, 0, 0, 0.445);
+    background-color: rgba(145, 219, 248, 0.781);
     }
 
 .body-crear-cuenta {

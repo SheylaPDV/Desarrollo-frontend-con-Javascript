@@ -1,15 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&family=Permanent+Marker&display=swap');
+
 .notificacion {
     width: 300px;
-    background-color: green;
-    color: white;
+    background-color: rgb(80, 118, 221);
+    color: rgb(255, 255, 255);
     border-radius: 0.5rem;
     display: flex;
     position: relative;
+    font-family: 'Montserrat Alternates',
+                  Arial,
+                  Helvetica,
+                  sans-serif;
 }
 
 .notificacion p {
     width: 80%;
     padding: 0.5rem;
+    margin-left: 50px;
 }
 
 .notificacion button {
