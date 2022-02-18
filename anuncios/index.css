@@ -60,6 +60,13 @@ a {
     text-decoration: none;
 }
 
+.imagen {
+    width: 100px;
+}
+
+.not-found {
+    width: 500px;
+}
 
 .boton-form {
     

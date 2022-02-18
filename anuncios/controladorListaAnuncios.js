@@ -1,6 +1,6 @@
 import { pubSub } from "../pubSub.js";
 import modeloServicioWallapop from "./modeloServicioWallapop.js";
-import { constructorAnuncios, constructorRuleta } from "./vistaAnuncios.js";
+import { buildAnuncioView, constructorAnuncios, constructorRuleta, notFoundAnuncioView } from "./vistaAnuncios.js";
 
 
 export class ControladorListaAnuncios {
@@ -19,6 +19,11 @@ export class ControladorListaAnuncios {
 
         try {
             anuncios = await modeloServicioWallapop.getAnuncios();
+            
+
+            if (anuncios.length === 0) {
+                this.listaDeAnuncios.innerHTML = notFoundAnuncioView();
+            }
 
             for (const anuncio of anuncios) {
                 const elementoDeArticulo = document.createElement('article');

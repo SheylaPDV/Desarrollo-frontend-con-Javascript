@@ -26,11 +26,37 @@ export default {
         return transformarProducto;
 
     },
+    async getAnuncio(anuncioId) {
+        const url = `http://localhost:8000/api/productos/${anuncioId}`;
+
+        let response;
+        let producto;
+
+        try {
+            response = await fetch(url);
+        } catch (error) {
+            throw new Error('No he podido ir a por el producto');
+        }
+
+        if (!response.ok) {
+            throw new Error("Producto no encontrado");
+        }
+
+        try {
+            producto = await response.json();
+        } catch (error) {
+            throw new Error('No he podido transformar la respuesta a json');
+        }
+
+        const transformarProducto = this.transformarProductos([producto]);
+        
+        return transformarProducto;
+    },
 
     transformarProductos(productos) {
         return productos.map((producto) => {
-            const transformarproducto = {
-                nombre: producto.nombre || producto.name,
+            const transformarProducto = {
+                nombre: producto.nombre || producto.content,
                 descripcion: producto.descripcion,
                 precio: producto.precio,
                 venta: producto.venta,
@@ -38,7 +64,7 @@ export default {
                 image: producto.avatar || 'https://idescargar.com/wp-content/uploads/2017/06/wallapop.png'
             };
             
-            return transformarproducto;
+            return transformarProducto;
         });
     }
     // nuevoGetAnuncios() {
