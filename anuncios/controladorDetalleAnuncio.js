@@ -1,10 +1,14 @@
+import { servicioCrearCuenta } from "../crearCuenta/servicioCrearCuenta.js";
 import { pubSub } from "../pubSub.js"
+import { decodeJWT } from "../utils/decodeJWT.js";
 import modeloServicioWallapop from "./modeloServicioWallapop.js";
 import { buildAnuncioView } from "./vistaAnuncios.js";
 
 export class ControladorDetalleAnuncios {
     constructor(detalleAnuncio) {
         this.detalleAnuncio = detalleAnuncio;
+        this.producto = null;
+
     }
 
     async verAnuncio(anuncioId) {
@@ -14,12 +18,54 @@ export class ControladorDetalleAnuncios {
             return;
         }
         try {
-            const producto = await modeloServicioWallapop.getAnuncio(anuncioId);
-            const anuncioTemplate = buildAnuncioView(producto);
+            this.producto = await modeloServicioWallapop.getAnuncio(anuncioId);
+            const anuncioTemplate = buildAnuncioView(this.producto);
             this.detalleAnuncio.innerHTML = anuncioTemplate;
+            this.botonDelete();
         } catch (error) {
             pubSub.publish(pubSub.TOPICS.SHOW_ERROR_NOTIFICATION, error);
         }
-        
+
+    }
+
+    botonDelete() {
+        const tokenUsuarioLogeado = servicioCrearCuenta.usuarioLogeado();
+
+        if (tokenUsuarioLogeado) {
+            const infoUsuario = decodeJWT(tokenUsuarioLogeado);
+            const esDueño = this.dueñoDeAnuncio(infoUsuario.userId);
+
+
+            if (esDueño) {
+                this.dibujarBotonDelete();
+            }
+        }
+    }
+
+    dueñoDeAnuncio(userId) {
+        return userId === this.producto.userId;
+    }
+
+    dibujarBotonDelete() {
+        const elementoBoton = document.createElement("button");
+        elementoBoton.textContent = 'Borrar producto';
+
+        this.detalleAnuncio.appendChild(elementoBoton);
+        this.detalleAnuncio.addEventListener("click", () => {
+            this.borrarAnuncio();
+        });
+    }
+
+    async borrarAnuncio() {
+        const confirmacionParaEliminar = window.confirm('¿Estás seguro de eliminar este anuncio?');
+        if (confirmacionParaEliminar) {
+            try {
+                await modeloServicioWallapop.borrarAnuncio(this.producto.id);
+                window.location.href = '/';
+            } catch (error) {
+
+            }
+
+        }
     }
 }

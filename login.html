@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="anuncios/index.css">
+    <link rel="stylesheet" href="notificaciones/notificacion.css">
+    <link rel="stylesheet" href="notificaciones/ruleta.css">
+    <title>Login</title>
+</head>
+<body class="body-crear-cuenta">
+    <form class="formulario-inicio-sesion">
+        <div class="notificacion"></div>
+            
+        <h3>Login</h3>
+
+        <label for="user">Introduzca nombre de usuario: </label>
+        <input class="input-form" type="text" name="textInput" id="user" placeholder="Nombre de usuario" required>
+
+        <label for="password">Introduzca contraseña: </label>
+        <input class="input-form" type="password" name="passwordInput" id="password" placeholder="Contraseña" required>
+
+    
+        <a href="index.html">
+            <button disabled type="module" class="boton-form" type="submit" onclick="index.html">
+                Login
+            </button>
+        </a>
+        <a href="crearCuenta.html">
+            <button type="module" class="boton-form" type="button" onclick="crearCuenta.html">
+                Si no tienes cuenta, crea una aqui.
+            </button>
+        </a>
+    </form>
+    
+
+    <script type="module" src="./login/login.js"></script>
+    <script type="module" src="/crearCuenta/crearCuenta.js"></script>
+    <script type="module" src="/pubSub.js"></script>
+</body>
+</html>

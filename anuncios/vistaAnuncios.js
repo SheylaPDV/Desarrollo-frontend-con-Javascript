@@ -15,7 +15,7 @@ export function buildAnuncioView(producto) {
 
     let anuncioTemplate = `
         <img class="imagen" src=${producto.image}></img>
-        <h1>Soy el usuario ${producto.id}</h1>
+        
         <h1>${producto.nombre}</h1>
         <p>${producto.venta}</p>
         <p>${producto.descripcion}</p>

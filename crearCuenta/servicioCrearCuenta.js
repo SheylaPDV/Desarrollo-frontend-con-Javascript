@@ -51,6 +51,10 @@ class ServicioCrearCuenta {
         const token = data.accessToken;
         localStorage.setItem('jwt', token);
     }
+    
+    usuarioLogeado() {
+        localStorage.getItem("jwt") || null;
+    }
 }
 
 export const servicioCrearCuenta = new ServicioCrearCuenta();

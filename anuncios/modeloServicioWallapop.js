@@ -1,3 +1,4 @@
+import { servicioCrearCuenta } from "../crearCuenta/servicioCrearCuenta.js";
 
 export default {
     async getAnuncios() {
@@ -50,7 +51,28 @@ export default {
 
         const transformarProducto = this.transformarProductos([producto]);
         
-        return transformarProducto;
+        return transformarProducto[0];
+    },
+    async borrarAnuncio(anuncioId) {
+        const url = `http://localhost:8000/api/productos/${anuncioId}`;
+
+        let response;
+       
+
+        try {
+            response = await fetch(url, {
+                method: 'DELETE',
+                headers: {
+                    Authorization: "Bearer " + servicioCrearCuenta.usuarioLogeado(),
+                },
+            });
+        } catch (error) {
+            throw new Error('No he podido borrar el anuncio');
+        }
+
+        if (!response.ok) {
+            throw new Error("Producto no encontrado");
+        }
     },
 
     transformarProductos(productos) {
@@ -60,8 +82,9 @@ export default {
                 descripcion: producto.descripcion,
                 precio: producto.precio,
                 venta: producto.venta,
+                userId: producto.userId || producto.handle,
                 id: producto.id || 0,
-                image: producto.avatar || 'https://idescargar.com/wp-content/uploads/2017/06/wallapop.png'
+                image: producto.avatar || 'https://idescargar.com/wp-content/uploads/2017/06/wallapop.png',
             };
             
             return transformarProducto;
