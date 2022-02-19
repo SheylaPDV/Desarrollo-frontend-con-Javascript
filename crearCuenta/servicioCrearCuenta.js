@@ -53,7 +53,7 @@ class ServicioCrearCuenta {
     }
     
     usuarioLogeado() {
-        localStorage.getItem("jwt") || null;
+       return localStorage.getItem("jwt") || null;
     }
 }
 

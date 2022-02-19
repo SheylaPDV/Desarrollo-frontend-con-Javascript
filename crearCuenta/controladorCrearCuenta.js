@@ -1,5 +1,6 @@
 import { pubSub } from '../pubSub.js';
 import { servicioCrearCuenta } from './servicioCrearCuenta.js';
+
 export class ControladorCrearCuenta {
     constructor(elementoFormulario) {
         this.elementoFormulario = elementoFormulario;
