@@ -1,5 +1,5 @@
 import { pubSub } from "../pubSub.js";
-import modeloServicioWallapop from "./modeloServicioWallapop.js";
+import ModeloServicioWallapop from "./ModeloServicioWallapop.js";
 import { buildAnuncioView, constructorAnuncios, constructorRuleta, notFoundAnuncioView } from "./vistaAnuncios.js";
 
 
@@ -18,7 +18,7 @@ export class ControladorListaAnuncios {
         this.listaDeAnuncios.innerHTML = ruletaTemplate;
 
         try {
-            anuncios = await modeloServicioWallapop.getAnuncios();
+            anuncios = await ModeloServicioWallapop.getAnuncios();
             
 
             if (anuncios.length === 0) {

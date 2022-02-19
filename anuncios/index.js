@@ -1,5 +1,5 @@
-import { ControladorListaAnuncios } from "./anuncios/controladorListaAnuncios.js";
-import { ControladorNotificaciones } from "./notificaciones/controladorNotificaciones.js";
+import { ControladorListaAnuncios } from "./controladorListaAnuncios.js";
+import { ControladorNotificaciones } from "../notificaciones/controladorNotificaciones.js";
 // import { constructorAnuncios } from "./vistaAnuncios.js";
 
 document.addEventListener('DOMContentLoaded', async () => {

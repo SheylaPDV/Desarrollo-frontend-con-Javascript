@@ -1,24 +1,23 @@
 import { servicioCrearCuenta } from "../crearCuenta/servicioCrearCuenta.js";
 import { pubSub } from "../pubSub.js"
 import { decodeJWT } from "../utils/decodeJWT.js";
-import modeloServicioWallapop from "./modeloServicioWallapop.js";
+import ModeloServicioWallapop from "./ModeloServicioWallapop.js";
 import { buildAnuncioView } from "./vistaAnuncios.js";
 
 export class ControladorDetalleAnuncios {
     constructor(detalleAnuncio) {
         this.detalleAnuncio = detalleAnuncio;
         this.producto = null;
-
     }
 
     async verAnuncio(anuncioId) {
         if (!anuncioId) {
-            pubSub.publish(pubSub.TOPICS.SHOW_ERROR_NOTIFICATION, 'Id del tweet no valido');
+            pubSub.publish(pubSub.TOPICS.SHOW_ERROR_NOTIFICATION, 'Id del anuncio no es valido');
 
             return;
         }
         try {
-            this.producto = await modeloServicioWallapop.getAnuncio(anuncioId);
+            this.producto = await ModeloServicioWallapop.getAnuncio(anuncioId);
             const anuncioTemplate = buildAnuncioView(this.producto);
             this.detalleAnuncio.innerHTML = anuncioTemplate;
             this.botonDelete();
@@ -30,7 +29,8 @@ export class ControladorDetalleAnuncios {
 
     botonDelete() {
         const tokenUsuarioLogeado = servicioCrearCuenta.usuarioLogeado();
-
+        console.log("Token JWT: " + tokenUsuarioLogeado)
+        
         if (tokenUsuarioLogeado) {
             const infoUsuario = decodeJWT(tokenUsuarioLogeado);
             const esDueño = this.dueñoDeAnuncio(infoUsuario.userId);
@@ -60,7 +60,7 @@ export class ControladorDetalleAnuncios {
         const confirmacionParaEliminar = window.confirm('¿Estás seguro de eliminar este anuncio?');
         if (confirmacionParaEliminar) {
             try {
-                await modeloServicioWallapop.borrarAnuncio(this.producto.id);
+                await ModeloServicioWallapop.borrarAnuncio(this.producto.id);
                 window.location.href = '/';
             } catch (error) {
 
