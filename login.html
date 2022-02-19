@@ -16,27 +16,26 @@
         <h3>Login</h3>
 
         <label for="user">Introduzca nombre de usuario: </label>
-        <input class="input-form" type="text" name="textInput" id="user" placeholder="Nombre de usuario" required>
+        <input class="input-form" type="text" name="user" placeholder="Nombre de usuario" required>
 
         <label for="password">Introduzca contraseña: </label>
-        <input class="input-form" type="password" name="passwordInput" id="password" placeholder="Contraseña" required>
+        <input class="input-form" type="password" name="password" placeholder="Contraseña" required>
 
     
         <a href="index.html">
             <button disabled type="module" class="boton-form" type="submit" onclick="index.html">
-                Login
+                Inicia Sesión
             </button>
         </a>
-        <a href="crearCuenta.html">
-            <button type="module" class="boton-form" type="button" onclick="crearCuenta.html">
-                Si no tienes cuenta, crea una aqui.
-            </button>
+
+        <a class="no-tienes-cuenta" href="./crearCuenta.html">
+            Si no tienes cuenta, crea una aqui.
         </a>
     </form>
     
 
     <script type="module" src="./login/login.js"></script>
-    <script type="module" src="/crearCuenta/crearCuenta.js"></script>
+    <!-- <script type="module" src="/crearCuenta/crearCuenta.js"></script> -->
     <script type="module" src="/pubSub.js"></script>
 </body>
 </html>
