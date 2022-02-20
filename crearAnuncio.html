@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="notificaciones/notificacion.css">
     <title>Registro</title>
 </head>
-<body class="body-crear-cuenta">
+<body class="body-crear-anuncio">
     <form class="formulario-inicio-sesion">
         <div class="notificacion"></div>
             
@@ -24,7 +24,12 @@
         <input class="input-form" type="text" name="precio" placeholder="Precio" required>
 
         <label for="venta">Venta o compra: </label>
-        <input class="input-form" type="text" name="venta" placeholder="Venta o compra" required>
+        <select class="input-form" name="venta" id="">
+            <option value="compra">Compra</option>
+            <option value="venta">Venta</option>        
+        </select>
+        <label for="imagen">Subir imagen: </label>
+        <input class="input-form" type="text" name="imagen" placeholder="subir imagen">
 
         <a href="index.html">
             <button type="module" class="boton-form" type="submit" onclick="index.html">

@@ -16,10 +16,10 @@ export function buildAnuncioView(producto) {
     let anuncioTemplate = `
         <img class="imagen" src=${producto.image}></img>
         
-        <h1>${producto.nombre}</h1>
-        <p>${producto.venta}</p>
-        <p>${producto.descripcion}</p>
-        <p>${producto.precio}</p>
+        <h1>Nombre: ${producto.nombre}</h1>
+        <p>Estado: ${producto.venta}</p>
+        <p>Descripción: ${producto.descripcion}</p>
+        <p>Precio: ${producto.precio}</p>
     `;
     return anuncioTemplate;
 }

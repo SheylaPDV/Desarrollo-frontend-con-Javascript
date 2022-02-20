@@ -1,3 +1,4 @@
+import { servicioCrearCuenta } from "../crearCuenta/servicioCrearCuenta.js";
 import { pubSub } from "../pubSub.js";
 import ModeloServicioWallapop from "./ModeloServicioWallapop.js";
 import { buildAnuncioView, constructorAnuncios, constructorRuleta, notFoundAnuncioView } from "./vistaAnuncios.js";
@@ -18,6 +19,9 @@ export class ControladorListaAnuncios {
         this.listaDeAnuncios.innerHTML = ruletaTemplate;
 
         try {
+
+            this.verBotonSubirAnuncio();
+
             anuncios = await ModeloServicioWallapop.getAnuncios();
             
 
@@ -34,6 +38,9 @@ export class ControladorListaAnuncios {
                 this.listaDeAnuncios.appendChild(elementoDeArticulo);
             }
 
+    
+            // comprobar que el usuario este logueado, y si lo esta pinto el botonn
+
         } catch (error) {
             // this.controladorNotificaciones.show("error obteniendo anuncios");
 
@@ -44,8 +51,36 @@ export class ControladorListaAnuncios {
             const loader = this.listaDeAnuncios.querySelector(".loader");
             loader.remove();
         }
+        
+    
 
     }
+
+    verBotonSubirAnuncio() {
+        const tokenUsuarioLogeado = servicioCrearCuenta.usuarioLogeado();
+        console.log("Token JWT: " + tokenUsuarioLogeado)
+        
+        if (tokenUsuarioLogeado) {
+            this.dibujarBotonSubida();
+        }
+    }
+
+    dibujarBotonSubida() {
+        // Creo boton 
+        const elementoBoton = document.createElement("button");
+        // Edito el texto del boton
+        elementoBoton.textContent = 'Subir producto';
+        elementoBoton.className = 'boton-sesion'
+        // Referencio el Div id=barra
+        const barra = document.getElementById("barra");
+        // Añado el elemento boton
+        barra.insertBefore(elementoBoton, barra.firstChild);
+        // Añado el evento click
+        elementoBoton.addEventListener("click", () => {
+            window.location.href = '/crearAnuncio.html';
+        });
+    }
+    
 }
 
 

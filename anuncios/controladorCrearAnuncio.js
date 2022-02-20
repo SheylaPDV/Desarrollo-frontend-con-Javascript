@@ -29,16 +29,17 @@ export class ControladorCrearAnuncio {
                 const descripcion = formData.get('descripcion');
                 const precio = formData.get('precio');
                 const venta = formData.get('venta');
+                const image = formData.get('imagen');
     
-                this.crearAnuncio(nombre, descripcion, precio, venta, tokenUsuarioLogeado);
+                this.crearAnuncio(nombre, descripcion, precio, venta, image, tokenUsuarioLogeado);
             });
         }
     
     }
 
-    async crearAnuncio(nombre, descripcion, precio, venta, tokenUsuarioLogeado) {
+    async crearAnuncio(nombre, descripcion, precio, venta, image, tokenUsuarioLogeado) {
         try {
-            await servicioCrearAnuncio.crearAnuncio(nombre, descripcion, precio, venta, tokenUsuarioLogeado);
+            await servicioCrearAnuncio.crearAnuncio(nombre, descripcion, precio, venta, image, tokenUsuarioLogeado);
             window.location.href = '/';
         } catch (error) {
             pubSub.publish(pubSub.TOPICS.SHOW_ERROR_NOTIFICATION, error);

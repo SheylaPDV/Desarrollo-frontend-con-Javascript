@@ -84,7 +84,7 @@ export default {
                 venta: producto.venta,
                 userId: producto.userId || producto.handle,
                 id: producto.id || 0,
-                image: producto.avatar || 'https://idescargar.com/wp-content/uploads/2017/06/wallapop.png',
+                image: producto.image || 'https://idescargar.com/wp-content/uploads/2017/06/wallapop.png',
             };
             
             return transformarProducto;

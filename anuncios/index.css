@@ -4,32 +4,58 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&family=Permanent+Marker&display=swap');
 
+.body-crear-anuncio {
+    background-image: url(./images/planta.jpg);
+    margin: 0;
+    height: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
+.detalle-anuncio {
+    display: flex;
+    background-color: rgba(216, 245, 245, 0.781);
+    width: 674px;
+    padding: 16px;
+    align-self: center;
+    flex-direction: column;
+    margin-top: 170px;
+    margin-left: 414px;
+    align-items: center;
+    border-radius: 10px;
+}
 
 .lista-anuncios {
-
-
+    /* background-color: aliceblue; */
     display: flex;
-    padding: 20px;
+    padding: 5px;
     position: relative;
     align-self: center;
-    align-items: center;
-    display: inline-block;
-    justify-content: center;
+    align-items: stretch;
+    /* display: inline-block; */
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
 }
-    /* display: flex;
-   
-    color: black;
-    background-color: rgba(146, 238, 250, 0.445);
-    padding: 10px;
-} */
 
+
+
+article {
+    width: 300px;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 20px;
+    background-color: aliceblue;
+   
+}
 
 
 .barra-login {
     display: flex;
     justify-items: center;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .input-form {
@@ -108,12 +134,18 @@ a {
                   sans-serif;
     /* background-color: rgba(61, 72, 231, 0.445) */
 }
+.logo2 {
+    color: rgb(255, 255, 255);
+    /* height: 10%; */
+    font-size: 25px;
+    /* widths: 10%; */
+    font-family: 'Montserrat Alternates', sans-serif;
+}
 
 .logo {
     color: rgb(255, 255, 255);
     height: 50%;
     font-size: 70px;
-    width: 50%;
     font-family: 'Montserrat Alternates', sans-serif;
 }
 
@@ -141,7 +173,7 @@ header {
 }
 
 .body-inicio {
-    background-image: url(./images/pink.jpg);
+    background-image: url(./images/Background_2.jpg);
     margin: 0px;
     height: 100%;
     background-size: cover;

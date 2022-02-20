@@ -50,6 +50,7 @@ class ServicioCrearCuenta {
         }
         const token = data.accessToken;
         localStorage.setItem('jwt', token);
+        
     }
     
     usuarioLogeado() {
