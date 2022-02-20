@@ -50,14 +50,13 @@ export default {
         }
 
         const transformarProducto = this.transformarProductos([producto]);
-        
+
         return transformarProducto[0];
     },
     async borrarAnuncio(anuncioId) {
         const url = `http://localhost:8000/api/productos/${anuncioId}`;
 
         let response;
-       
 
         try {
             response = await fetch(url, {
@@ -86,30 +85,8 @@ export default {
                 id: producto.id || 0,
                 image: producto.image || 'https://idescargar.com/wp-content/uploads/2017/06/wallapop.png',
             };
-            
+
             return transformarProducto;
         });
     }
-    // nuevoGetAnuncios() {
-    //     const url = 'https://gist.githubusercontent.com/edu-aguilar/8c9a509ec582d04da0640be2b0ede8d5/raw/f75c68645821f3c33d82d9c2c048215584d1d332/tweets.json'
-
-    //     return new Promise(function (resolve, reject) {
-    //         fetch(url) //devuelve promesa
-    //             .catch((error) => {
-    //                 console.log(error);
-    //                 reject('No he podido ir a por los tweets');
-    //             })
-    //             .then((responseHttp) => {
-    //                 console.log(responseHttp);
-    //                 return responseHttp.json(); //el json devuelve otra promesa
-    //             })
-    //             .catch((error) => {
-    //                 console.log(error);
-    //                 reject('no he podido transofrmar la respuesta a json');
-    //             })
-    //             .then((data) => {
-    //                 resolve(data);
-    //             });
-    //     });
-    // },
 };

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,38 +12,40 @@
 
     <title>Wallapop</title>
 
-    </head>
-    <body class="body-inicio">
-        <header>
-            <h1 class="logo">Wallapop </h1>
-            <h5 class="logo2">¿Qué estás buscando hoy?</h5>
-           
-            <div class="barra-login" id="barra">
-                
-                <a href="/login.html">
-                    <button class="boton-sesion" type="button" onclick="login.html">
-                        Inicia Sesión
-                    </button>
-                </a> 
-                <a href="/crearCuenta.html">
-                    <button class="boton-sesion" type="button" onclick="crearCuenta.html">
-                        Regístrate
-                    </button>
-                    
-                </a>
-                 
-            </div>
-        </header>
+</head>
 
-        
-        <main>
-            <div class="notificacion"></div>
-            <section class="lista-anuncios"></section>
-        
-        </main>
-       
-        <script type="module" src="./anuncios/index.js"></script>
-        <script type="module" src="./pubSub.js"></script>
-        
-    </body>
+<body class="body-inicio">
+    <header>
+        <h1 class="logo">Wallapop </h1>
+        <h5 class="logo2">¿Qué estás buscando hoy?</h5>
+
+        <div class="barra-login" id="barra">
+
+            <a href="/login.html">
+                <button class="boton-sesion" type="button" onclick="login.html">
+                    Inicia Sesión
+                </button>
+            </a>
+            
+            <a href="/crearCuenta.html">
+                <button class="boton-sesion" type="button" onclick="crearCuenta.html">
+                    Regístrate
+                </button>
+            </a>
+
+        </div>
+    </header>
+
+
+    <main>
+        <div class="notificacion"></div>
+        <section class="lista-anuncios"></section>
+
+    </main>
+
+    <script type="module" src="./anuncios/index.js"></script>
+    <script type="module" src="./pubSub.js"></script>
+
+</body>
+
 </html>

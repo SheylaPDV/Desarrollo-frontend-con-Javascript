@@ -18,13 +18,13 @@ export class ControladorLogin {
 
         elementosInputs.forEach(elementoInput => {
             elementoInput.addEventListener('input', () => {
-               const inputsLlenos = elementosInputs.every(elementoInput => elementoInput.value);
+                const inputsLlenos = elementosInputs.every(elementoInput => elementoInput.value);
 
-               if (inputsLlenos) {
-                   this.elementoLogin.querySelector('button').removeAttribute('disabled');
-               } else {
+                if (inputsLlenos) {
+                    this.elementoLogin.querySelector('button').removeAttribute('disabled');
+                } else {
                     this.elementoLogin.querySelector('button').setAttribute('disabled', "");
-               }
+                }
             });
         });
     }
@@ -46,12 +46,10 @@ export class ControladorLogin {
         try {
             await servicioCrearCuenta.loginUsuario(username, password);
             window.location.href = '/';
-          
+
         } catch (error) {
             pubSub.publish(pubSub.TOPICS.SHOW_ERROR_NOTIFICATION, error);
         }
-
     }
 }
 
- 

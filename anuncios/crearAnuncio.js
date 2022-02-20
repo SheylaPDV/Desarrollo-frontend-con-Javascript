@@ -8,5 +8,5 @@ document.addEventListener('DOMContentLoaded', () => { //escucho y si todo carga 
 
     const controladorNotificacion = new ControladorNotificaciones(elementoNotificacion);
 
-    const controladorCrearAnuncio = new ControladorCrearAnuncio(elementoFormulario);//instanciamos la clase con el elemento para que haga lo que sea
+    const controladorCrearAnuncio = new ControladorCrearAnuncio(elementoFormulario);
 });

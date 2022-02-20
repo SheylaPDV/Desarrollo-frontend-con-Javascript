@@ -1,7 +1,6 @@
 import { pubSub } from "../pubSub.js";
 import { vistaNotificacion } from "./vistaNotificacion.js";
 
-
 export class ControladorNotificaciones {
     constructor(elementoNotificacion) {
         this.elementoNotificacion = elementoNotificacion;
@@ -18,7 +17,7 @@ export class ControladorNotificaciones {
 
     show(message) {
         const notificacionTemplate = vistaNotificacion(message);
-        
+
         this.elementoNotificacion.innerHTML = notificacionTemplate;
 
         const cerrarBoton = this.elementoNotificacion.querySelector('button');

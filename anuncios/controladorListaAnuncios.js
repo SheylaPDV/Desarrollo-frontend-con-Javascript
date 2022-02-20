@@ -23,7 +23,6 @@ export class ControladorListaAnuncios {
             this.verBotonSubirAnuncio();
 
             anuncios = await ModeloServicioWallapop.getAnuncios();
-            
 
             if (anuncios.length === 0) {
                 this.listaDeAnuncios.innerHTML = notFoundAnuncioView();
@@ -38,7 +37,6 @@ export class ControladorListaAnuncios {
                 this.listaDeAnuncios.appendChild(elementoDeArticulo);
             }
 
-    
             // comprobar que el usuario este logueado, y si lo esta pinto el botonn
 
         } catch (error) {
@@ -51,15 +49,12 @@ export class ControladorListaAnuncios {
             const loader = this.listaDeAnuncios.querySelector(".loader");
             loader.remove();
         }
-        
-    
-
     }
 
     verBotonSubirAnuncio() {
         const tokenUsuarioLogeado = servicioCrearCuenta.usuarioLogeado();
         console.log("Token JWT: " + tokenUsuarioLogeado)
-        
+
         if (tokenUsuarioLogeado) {
             this.dibujarBotonSubida();
         }
@@ -69,7 +64,7 @@ export class ControladorListaAnuncios {
         // Creo boton 
         const elementoBoton = document.createElement("button");
         // Edito el texto del boton
-        elementoBoton.textContent = 'Subir producto';
+        elementoBoton.textContent = 'Subir producto +';
         elementoBoton.className = 'boton-sesion'
         // Referencio el Div id=barra
         const barra = document.getElementById("barra");
@@ -80,7 +75,7 @@ export class ControladorListaAnuncios {
             window.location.href = '/crearAnuncio.html';
         });
     }
-    
+
 }
 
 

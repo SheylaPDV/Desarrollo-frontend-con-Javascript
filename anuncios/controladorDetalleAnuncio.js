@@ -24,17 +24,15 @@ export class ControladorDetalleAnuncios {
         } catch (error) {
             pubSub.publish(pubSub.TOPICS.SHOW_ERROR_NOTIFICATION, error);
         }
-
     }
 
     botonDelete() {
         const tokenUsuarioLogeado = servicioCrearCuenta.usuarioLogeado();
         console.log("Token JWT: " + tokenUsuarioLogeado)
-        
+
         if (tokenUsuarioLogeado) {
             const infoUsuario = decodeJWT(tokenUsuarioLogeado);
             const esDueño = this.dueñoDeAnuncio(infoUsuario.userId);
-
 
             if (esDueño) {
                 this.dibujarBotonDelete();
@@ -63,7 +61,7 @@ export class ControladorDetalleAnuncios {
                 await ModeloServicioWallapop.borrarAnuncio(this.producto.id);
                 window.location.href = '/';
             } catch (error) {
-
+                pubSub.publish(pubSub.TOPICS.SHOW_ERROR_NOTIFICATION, error);
             }
 
         }

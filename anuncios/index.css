@@ -5,28 +5,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&family=Permanent+Marker&display=swap');
 
 .body-crear-anuncio {
-    background-image: url(./images/planta.jpg);
     margin: 0;
     height: 100%;
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
+    background-image: url(./images/planta.jpg);
 }
 
-
 .detalle-anuncio button {
+    width: 150px;
+    display: flex;
+    cursor: pointer;
+    font-size: 13px;
+    color: rgb(0, 0, 0);
+    border-radius: 50px;
+    justify-content: center;
     font-family: 'Montserrat Alternates',
                   Arial,
                   Helvetica,
                   sans-serif;
-    width: 150px;
-    color: rgb(0, 0, 0);
-    cursor: pointer;
-    font-size: 13px;
-    display: flex;
-    justify-content: center;
-    border-radius: 50px;
 }
 
 .detalle-anuncio {
@@ -35,7 +34,6 @@
     position: relative;
     align-self: center;
     align-items: center;
-    /* display: inline-block; */
     flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
@@ -48,19 +46,23 @@
 }
 
 .lista-anuncios {
-    /* background-color: aliceblue; */
     display: flex;
     padding: 5px;
     position: relative;
     align-self: center;
     align-items: stretch;
-    /* display: inline-block; */
     flex-direction: row;
     justify-content: flex-start;
     flex-wrap: wrap;
 }
 
+p {
+    color: black;
+}
 
+h1 {
+    color: black;
+}
 
 article {
     width: 300px;
@@ -72,9 +74,7 @@ article {
                   Arial,
                   Helvetica,
                   sans-serif;
-   
 }
-
 
 .barra-login {
     display: flex;
@@ -89,12 +89,12 @@ article {
     min-width: 325px;
     border-radius: 7px;
 }
+
 label {
     margin-top: 20px;
 }
 
 .boton-sesion {
-    
     width: 150px;
     color: rgb(0, 0, 0);
     cursor: pointer;
@@ -102,7 +102,6 @@ label {
     display: flex;
     justify-content: center;
     border-radius: 50px;
-   
     font-family: 'Montserrat Alternates',
                   Arial,
                   Helvetica,
@@ -122,7 +121,6 @@ a {
 }
 
 .boton-form {
-    
     height: 35px;
     width: 200px;
     color: rgb(0, 0, 0);
@@ -130,40 +128,69 @@ a {
     font-size: 18px;
     margin-top: 30px;
     border-radius: 50px;
-   
     font-family: 'Montserrat Alternates',
                   Arial,
                   Helvetica,
                   sans-serif;
 }
 
-
-
 .formulario-inicio-sesion {
     flex: 1;
-    /* width: 30%; */
     display: flex;
     left: 545px;
     top: 0px;
-    margin-top: 225px;
+    margin-top: 74px;
     position: sticky;
     align-items: center;
     align-content: center;
     padding-bottom: 40px;
     flex-direction: column;
     justify-content: center;
-
     font-family: 'Montserrat Alternates',
                   Arial,
                   Helvetica,
                   sans-serif;
-    /* background-color: rgba(61, 72, 231, 0.445) */
 }
+
+.formulario-login-sesion {
+    flex: 1;
+    display: flex;
+    left: 545px;
+    top: 0px;
+    margin-top: 230px;
+    position: sticky;
+    align-items: center;
+    align-content: center;
+    padding-bottom: 40px;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Montserrat Alternates',
+                  Arial,
+                  Helvetica,
+                  sans-serif;
+}
+
+.formulario-crear-cuenta {
+    flex: 1;
+    display: flex;
+    left: 545px;
+    top: 0px;
+    margin-top: 230px;
+    position: sticky;
+    align-items: center;
+    align-content: center;
+    padding-bottom: 40px;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Montserrat Alternates',
+                  Arial,
+                  Helvetica,
+                  sans-serif;
+}
+
 .logo2 {
     color: rgb(255, 255, 255);
-    /* height: 10%; */
     font-size: 25px;
-    /* widths: 10%; */
     font-family: 'Montserrat Alternates', sans-serif;
 }
 
@@ -185,7 +212,7 @@ header {
     align-content: center;
     justify-content: space-around;
     background-color: rgba(145, 219, 248, 0.781);
-    }
+}
 
 .body-crear-cuenta {
     background-image: url(./images/fondo.jpg);

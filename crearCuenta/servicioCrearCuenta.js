@@ -33,8 +33,6 @@ class ServicioCrearCuenta {
             password,
         };
 
-        //Este codigo es lo mismo que hacemos en postman
-
         const response = await fetch("http://localhost:8000/auth/login", {
             method: "POST",
             body: JSON.stringify(body),
@@ -50,11 +48,10 @@ class ServicioCrearCuenta {
         }
         const token = data.accessToken;
         localStorage.setItem('jwt', token);
-        
     }
-    
+
     usuarioLogeado() {
-       return localStorage.getItem("jwt") || null;
+        return localStorage.getItem("jwt") || null;
     }
 }
 

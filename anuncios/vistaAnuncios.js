@@ -9,7 +9,6 @@ export function constructorAnuncios(producto) {
     return anuncioTemplate;
 }
 
-
 export function buildAnuncioView(producto) {
     // const currentTime = new Date(producto.precio).toLocaleString();
 
@@ -23,7 +22,6 @@ export function buildAnuncioView(producto) {
     `;
     return anuncioTemplate;
 }
-
 
 export function constructorRuleta() {
     return `<div class="loader">

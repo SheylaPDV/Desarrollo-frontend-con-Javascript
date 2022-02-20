@@ -27,7 +27,6 @@ export class ControladorCrearCuenta {
                 }
             });
         });
-
     }
 
     botonSubmit() {
@@ -81,10 +80,9 @@ export class ControladorCrearCuenta {
         try {
             await servicioCrearCuenta.loginUsuario(username, passwordInput);
             window.location.href = '/';
-          
+
         } catch (error) {
             pubSub.publish(pubSub.TOPICS.SHOW_ERROR_NOTIFICATION, error);
         }
-
     }
 }

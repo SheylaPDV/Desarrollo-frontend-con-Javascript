@@ -10,7 +10,6 @@ export class ControladorCrearAnuncio {
     }
 
     subscribirAEventos() {
-        // this.cambiosEnInputs()
         this.botonCrear()
     }
 
@@ -18,23 +17,23 @@ export class ControladorCrearAnuncio {
 
         const tokenUsuarioLogeado = servicioCrearCuenta.usuarioLogeado();
         console.log("Token JWT: " + tokenUsuarioLogeado)
-        
+
         if (tokenUsuarioLogeado) {
             this.elementoCrearAnuncio.addEventListener('submit', (event) => {
                 event.preventDefault();
-    
+
                 const formData = new FormData(this.elementoCrearAnuncio);
-    
+
                 const nombre = formData.get('nombre'); //traigo informacion del input
                 const descripcion = formData.get('descripcion');
                 const precio = formData.get('precio');
                 const venta = formData.get('venta');
                 const image = formData.get('imagen');
-    
+
                 this.crearAnuncio(nombre, descripcion, precio, venta, image, tokenUsuarioLogeado);
             });
         }
-    
+
     }
 
     async crearAnuncio(nombre, descripcion, precio, venta, image, tokenUsuarioLogeado) {
