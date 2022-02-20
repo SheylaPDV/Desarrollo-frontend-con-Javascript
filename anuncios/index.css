@@ -14,17 +14,37 @@
     background-position: center;
 }
 
+
+.detalle-anuncio button {
+    font-family: 'Montserrat Alternates',
+                  Arial,
+                  Helvetica,
+                  sans-serif;
+    width: 150px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50px;
+}
+
 .detalle-anuncio {
     display: flex;
-    background-color: rgba(216, 245, 245, 0.781);
-    width: 674px;
-    padding: 16px;
+    padding: 20px;
+    position: relative;
     align-self: center;
-    flex-direction: column;
-    margin-top: 170px;
-    margin-left: 414px;
     align-items: center;
-    border-radius: 10px;
+    /* display: inline-block; */
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    margin-top: 160px;
+    background-color: rgba(150, 245, 186, 0.349);
+    font-family: 'Montserrat Alternates',
+                  Arial,
+                  Helvetica,
+                  sans-serif;
 }
 
 .lista-anuncios {
@@ -48,6 +68,10 @@ article {
     margin: 20px;
     padding: 20px;
     background-color: aliceblue;
+    font-family: 'Montserrat Alternates',
+                  Arial,
+                  Helvetica,
+                  sans-serif;
    
 }
 
@@ -63,13 +87,14 @@ article {
     height: 30px;
     margin-top: 20px;
     min-width: 325px;
+    border-radius: 7px;
 }
 label {
     margin-top: 20px;
 }
 
 .boton-sesion {
-    height: 35px;
+    
     width: 150px;
     color: rgb(0, 0, 0);
     cursor: pointer;
