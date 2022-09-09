@@ -1,0 +1,19 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "Para facilidad en el desarrollo, utilizaremos alguna herramienta para que el navegador se recargue automáticamente cada vez que guardemos cambios en nuestro código. Para ello, utilizaremos npx live-server como librería de NodeJS o BrowserSync como extensión de Visual Studio Code.",
+  "main": "pubSub.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SheylaPDV/Desarrollo-frontend-con-Javascript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SheylaPDV/Desarrollo-frontend-con-Javascript/issues"
+  },
+  "homepage": "https://github.com/SheylaPDV/Desarrollo-frontend-con-Javascript#readme"
+}
