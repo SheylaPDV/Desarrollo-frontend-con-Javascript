@@ -31,6 +31,7 @@
 
 .detalle-anuncio {
   display: flex;
+
   padding: 20px;
   position: relative;
   align-self: center;
@@ -63,12 +64,15 @@ h1 {
 }
 
 article {
+  display: flex;
   width: 300px;
   border-radius: 20px;
   margin: 20px;
   padding: 20px;
   background-color: aliceblue;
   font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
+  justify-content: center;
+  align-items: center;
 }
 
 .barra-login {
@@ -107,6 +111,7 @@ label {
 a {
   text-decoration: none;
   color: black;
+
   cursor: pointer;
 }
 a:hover {
