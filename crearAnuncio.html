@@ -1,46 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="anuncios/index.css">
-    <link rel="stylesheet" href="notificaciones/notificacion.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="anuncios/index.css" />
+    <link rel="stylesheet" href="notificaciones/notificacion.css" />
     <title>Registro</title>
-</head>
+  </head>
 
-<body class="body-crear-anuncio">
+  <body class="body-crear-anuncio">
     <form class="formulario-inicio-sesion">
-        <div class="notificacion"></div>
+      <div class="notificacion"></div>
 
-        <h3>Subir producto</h3>
+      <h3>Subir producto</h3>
 
-        <label for="nombre">Nombre del producto: </label>
-        <input class="input-form" type="text" name="nombre" placeholder="Nombre del producto" required>
+      <label for="nombre">Nombre del producto: </label>
+      <input
+        class="input-form"
+        type="text"
+        name="nombre"
+        placeholder="Nombre del producto"
+        required
+      />
 
-        <label for="descripcion">Descripción: </label>
-        <input class="input-form" type="text" name="descripcion" placeholder="Descripcion" required>
+      <label for="descripcion">Descripción: </label>
+      <input
+        class="input-form"
+        type="text"
+        name="descripcion"
+        placeholder="Descripcion"
+        required
+      />
 
-        <label for="precio">Precio: </label>
-        <input class="input-form" type="text" name="precio" placeholder="Precio" required>
+      <label for="precio">Precio: </label>
+      <input
+        class="input-form"
+        type="text"
+        name="precio"
+        placeholder="Precio"
+        required
+      />
 
-        <label for="venta">Estado: </label>
-        <select class="input-form" name="venta" id="">
-            <option value="compra">Compra</option>
-            <option value="venta">Venta</option>
-        </select>
-        <label for="imagen">Subir imagen: </label>
-        <input class="input-form" type="text" name="imagen" placeholder="Copiar link aquí">
+      <label for="venta">Estado: </label>
+      <select class="input-form" name="venta" id="">
+        <option value="compra">Compra</option>
+        <option value="venta">Venta</option>
+      </select>
+      <label for="imagen">Subir imagen: </label>
+      <input
+        class="input-form"
+        type="text"
+        name="imagen"
+        placeholder="Copiar link aquí"
+      />
 
-        <a href="index.html">
-            <button type="module" class="boton-form" type="submit" onclick="index.html">
-                Subir producto
-            </button>
-        </a>
+      <a href="index.html">
+        <button
+          type="module"
+          class="boton-form"
+          type="submit"
+          onclick="index.html"
+        >
+          Subir producto
+        </button>
+      </a>
     </form>
     <script type="module" src="/anuncios/crearAnuncio.js"></script>
     <script type="module" src="pubSub.js"></script>
-</body>
-
+  </body>
 </html>
