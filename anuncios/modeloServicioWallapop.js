@@ -1,6 +1,7 @@
-import { servicioCrearCuenta } from "../crearCuenta/servicioCrearCuenta.js";
+import { servicioCrearCuenta } from "../../crearCuenta/servicioCrearCuenta.js";
 
 export default {
+  // Trae todos los productos
   async getAnuncios() {
     const url = "http://localhost:8000/api/products";
 
@@ -9,6 +10,7 @@ export default {
 
     try {
       response = await fetch(url);
+      console.log("Response", response);
     } catch (error) {
       throw new Error("No he podido cargar los productos");
     }
@@ -18,7 +20,9 @@ export default {
     }
 
     try {
+      // Transforma respuesta a json
       productos = await response.json();
+      console.log("productos", productos);
     } catch (error) {
       throw new Error("No he podido transformar la respuesta a json");
     }
@@ -26,6 +30,8 @@ export default {
     const transformarProducto = this.transformarProductos(productos);
     return transformarProducto;
   },
+
+  // Trae detalle del producto
   async getAnuncio(anuncioId) {
     const url = `http://localhost:8000/api/products/${anuncioId}`;
 
@@ -35,7 +41,7 @@ export default {
     try {
       response = await fetch(url);
     } catch (error) {
-      throw new Error("No he podido ir a por el producto");
+      throw new Error("No he podido traer el producto");
     }
 
     if (!response.ok) {
@@ -52,6 +58,8 @@ export default {
 
     return transformarProducto[0];
   },
+
+  // funcion que borra un producto por id
   async borrarAnuncio(anuncioId) {
     const url = `http://localhost:8000/api/products/${anuncioId}`;
 

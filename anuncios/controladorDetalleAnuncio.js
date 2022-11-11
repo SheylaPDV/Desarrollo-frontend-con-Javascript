@@ -1,7 +1,7 @@
 import { servicioCrearCuenta } from "../crearCuenta/servicioCrearCuenta.js";
 import { pubSub } from "../pubSub.js";
 import { decodeJWT } from "../utils/decodeJWT.js";
-import ModeloServicioWallapop from "./ModeloServicioWallapop.js";
+import ModeloServicioWallapop from "./modeloServicioWallapop.js";
 import { buildAnuncioView } from "./vistaAnuncios.js";
 
 export class ControladorDetalleAnuncios {
@@ -52,6 +52,8 @@ export class ControladorDetalleAnuncios {
     const elementBoton = document.createElement("a");
     elementBoton.textContent = "Atrás";
     this.detalleAnuncio.appendChild(elementBoton);
+    const enlace = document.querySelector("a");
+    enlace.onclick = () => (window.location.href = "/");
   }
 
   dibujarBotonDelete() {
@@ -59,15 +61,17 @@ export class ControladorDetalleAnuncios {
     elementoBoton.textContent = "Borrar producto";
 
     this.detalleAnuncio.appendChild(elementoBoton);
-    this.detalleAnuncio.EventTarget("button").addEventListener("click", () => {
-      this.borrarAnuncio();
-    });
+    const buttonBorrar = document.querySelector("button");
+    buttonBorrar.onclick = () => this.borrarAnuncio();
   }
 
+  // funcion borrar anuncio
   async borrarAnuncio() {
+    // Confirmacion al eliminar
     const confirmacionParaEliminar = window.confirm(
       "¿Estás seguro de eliminar este anuncio?"
     );
+    // Comprobacion
     if (confirmacionParaEliminar) {
       try {
         await ModeloServicioWallapop.borrarAnuncio(this.producto.id);
